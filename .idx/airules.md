@@ -98,10 +98,10 @@ To create a structured and motivating learning journey, you must manage the tran
 
   2.  Let `nextModule` be the upcoming module.
 
-3. **Final Phase Completion**: If `completedModule` is the last module of the final phase (Module 41):
+3. **Final Phase Completion**: If `completedModule` is the last module of the final phase (Module 40):
    _ You must deliver a grand congratulatory message. For example: _"**Amazing work! You've done it!** You have successfully completed all phases of the Modern Angular tutorial. You've built a complete, functional Task Manager application from scratch and mastered the core concepts of modern Angular development, from signals and standalone components to services, routing, and API integration. Congratulations on this incredible achievement!"\*
 
-4. **Phase Transition**: If `completedModule` is the last module of a phase (e.g., Module 5 for Phase 1, Module 11 for Phase 2, Module 22 for Phase 3, Module 25 for Phase 4, Module 28 for Phase 5, Module 35 for Phase 6, Module 41 for Phase 7):
+4. **Phase Transition**: If `completedModule` is the last module of a phase (e.g., Module 5 for Phase 1, Module 11 for Phase 2, Module 22 for Phase 3, Module 25 for Phase 4, Module 28 for Phase 5, Module 35 for Phase 6, Module 40 for Phase 7):
    _ First, deliver a message congratulating the user on completing the phase. For example: _"Excellent work! You've just completed **Phase 1: Getting Started**."\*
    _ Then, introduce the next phase by name and display its table of contents. For example: _"Now, we'll move on to **Phase 2: Task Listing**. Here's what you'll be learning:"_ followed by a list of only the modules in that phase.
    _ Finally, begin the lesson for `nextModule`.
@@ -534,18 +534,16 @@ _(The LLM will need to interpret "project-specific" or "app-themed" below based 
 
 ### Phase 7: API Server
 
-- **Module 36 (JSON Server Installation)**
-  \_ **36a**: JSON Server is installed and configured. `description`: "setting up mock API server."
-- **Module 37 (Add HTTP Client)**
-  \_ **37a**: Angular's HttpClient is configured for API communication. `description`: "setting up HTTP client."
-- **Module 38 (Retrieve Tasks)**
-  \_ **38a**: The service fetches tasks from the JSON Server API. `description`: "implementing API data retrieval."
-- **Module 39 (Create Task)**
-  \_ **39a**: API calls are implemented to create new tasks on the server. `description`: "implementing API task creation."
-- **Module 40 (Update Task)**
-  \_ **40a**: API calls are implemented to update existing tasks on the server. `description`: "implementing API task updates."
-- **Module 41 (Delete Task)**
-  \_ **41a**: API calls are implemented to delete tasks from the server. `description`: "implementing API task deletion."
+- **Module 36 (Add HTTP Client)**
+  \_ **36a**: Angular's HttpClient is configured for API communication. `description`: "setting up HTTP client."
+- **Module 37 (Retrieve Tasks)**
+  \_ **37a**: The service fetches tasks from the JSON Server API. `description`: "implementing API data retrieval."
+- **Module 38 (Create Task)**
+  \_ **38a**: API calls are implemented to create new tasks on the server. `description`: "implementing API task creation."
+- **Module 39 (Update Task)**
+  \_ **39a**: API calls are implemented to update existing tasks on the server. `description`: "implementing API task updates."
+- **Module 40 (Delete Task)**
+  \_ **40a**: API calls are implemented to delete tasks from the server. `description`: "implementing API task deletion."
 
 ---
 
@@ -608,9 +606,8 @@ You will guide the user through the following phases in strict order. Each modul
 
 ### Phase 7: API Server
 
-- **Module 36**: **JSON Server Installation**: Concept: Setting up a mock API server for development. Exercise: Install and configure JSON Server to simulate a backend API.
-- **Module 37**: **Add HTTP Client**: Concept: Making HTTP requests in Angular. Exercise: Configure Angular's HttpClient to communicate with the API.
-- **Module 38**: **Retrieve Tasks**: Concept: Fetching data from an API. Exercise: Modify the service to fetch tasks from the JSON Server API.
-- **Module 39**: **Create Task**: Concept: Sending data to an API. Exercise: Implement API calls to create new tasks on the server.
-- **Module 40**: **Update Task**: Concept: Updating data via API calls. Exercise: Implement API calls to update existing tasks on the server.
-- **Module 41**: **Delete Task**: Concept: Removing data via API calls. Exercise: Implement API calls to delete tasks from the server.
+- **Module 36**: **Add HTTP Client**: Concept: Making HTTP requests in Angular. Exercise: Configure Angular's HttpClient to communicate with the API.
+- **Module 37**: **Retrieve Tasks**: Concept: Fetching data from an API. Exercise: Modify the service to fetch tasks from the JSON Server API.
+- **Module 38**: **Create Task**: Concept: Sending data to an API. Exercise: Implement API calls to create new tasks on the server.
+- **Module 39**: **Update Task**: Concept: Updating data via API calls. Exercise: Implement API calls to update existing tasks on the server.
+- **Module 40**: **Delete Task**: Concept: Removing data via API calls. Exercise: Implement API calls to delete tasks from the server.
