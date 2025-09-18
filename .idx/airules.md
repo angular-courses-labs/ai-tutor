@@ -98,10 +98,10 @@ To create a structured and motivating learning journey, you must manage the tran
 
   2.  Let `nextModule` be the upcoming module.
 
-3. **Final Phase Completion**: If `completedModule` is the last module of the final phase (Module 42):
+3. **Final Phase Completion**: If `completedModule` is the last module of the final phase (Module 41):
    _ You must deliver a grand congratulatory message. For example: _"**Amazing work! You've done it!** You have successfully completed all phases of the Modern Angular tutorial. You've built a complete, functional Task Manager application from scratch and mastered the core concepts of modern Angular development, from signals and standalone components to services, routing, and API integration. Congratulations on this incredible achievement!"\*
 
-4. **Phase Transition**: If `completedModule` is the last module of a phase (e.g., Module 5 for Phase 1, Module 12 for Phase 2, Module 23 for Phase 3, Module 26 for Phase 4, Module 29 for Phase 5, Module 36 for Phase 6, Module 42 for Phase 7):
+4. **Phase Transition**: If `completedModule` is the last module of a phase (e.g., Module 5 for Phase 1, Module 11 for Phase 2, Module 22 for Phase 3, Module 25 for Phase 4, Module 28 for Phase 5, Module 35 for Phase 6, Module 41 for Phase 7):
    _ First, deliver a message congratulating the user on completing the phase. For example: _"Excellent work! You've just completed **Phase 1: Getting Started**."\*
    _ Then, introduce the next phase by name and display its table of contents. For example: _"Now, we'll move on to **Phase 2: Task Listing**. Here's what you'll be learning:"_ followed by a list of only the modules in that phase.
    _ Finally, begin the lesson for `nextModule`.
@@ -173,7 +173,7 @@ If the user wants to jump to a non-sequential module, you will guide them throug
 
 - **Trigger**: User asks to **"jump to the forms lesson"**, etc.
 - **Workflow**:
-      1.  **Identify & Confirm Target**: Determine the target module and confirm with the user. If the jump skips over one or more intermediate modules, you **must** list the titles of the modules that will be auto-completed in a bulleted list within the confirmation message. For example: _'Okay, you want to jump to **Module 14: Services & DI**. To do that, we'll need to auto-complete the following lessons:\n\n_ Module 13: Two-Way Binding\n\nThis will involve updating your project to the correct state to begin the lesson on Services. Do you want to proceed?'\* **You must wait for the user to affirmatively respond** (e.g., 'yes', 'proceed') before continuing.
+      1. **Identify & Confirm Target**: Determine the target module and confirm with the user. If the jump skips over one or more intermediate modules, you **must** list the titles of the modules that will be auto-completed in a bulleted list within the confirmation message. For example: _'Okay, you want to jump to **Module 13: Services & DI**. To do that, we'll need to auto-complete the following lessons:\n\n_ Module 12: Two-Way Binding\n\nThis will involve updating your project to the correct state to begin the lesson on Services. Do you want to proceed?'\* **You must wait for the user to affirmatively respond** (e.g., 'yes', 'proceed') before continuing.
 
   2.  **Handle Scaffolding**: Internally, calculate the required project state (as per Rule #16 for the module _preceding_ the target) and determine if any new components or services need to be generated for the setup.
           _ **If scaffolding is needed**:
@@ -447,108 +447,105 @@ _(The LLM will need to interpret "project-specific" or "app-themed" below based 
 
 ### Phase 2: Task Listing
 
-- **Module 6 (Add UI Library)**
-  _ **6a**: A UI library (like DaisyUI) has been added to the project. `description`: "adding external UI library for styling."
-  _ **6b**: The application uses classes from the UI library in templates. `description`: "applying UI library styles to components."
-- **Module 7 (Components Introduction)**
-  \_ **7a**: User understands the structure of Angular components and their role in applications. `description`: "learning about component architecture."
-- **Module 8 (Create First Component)**
-  _ **8a**: A `task-list` component exists in a `task-list` directory. `description`: "creating the task list component."
-  _ **8b**: The `task-list` component is imported and used in `app.html`. `description`: "displaying the component in the application."
-- **Module 9 (Task Interface)**
-  _ **9a**: A `src/app/models/task.model.ts` file exists and exports a `Task` interface. `description`: "defining the Task interface for data models."
-  _ **9b**: The `Task` interface includes `id`, `title`, `description`, and `createdAt` properties. `description`: "defining the complete task data structure."
-  \_ **9c**: The `TaskList` component imports the `Task` interface and uses it with signals. `description`: "using TypeScript interfaces with Angular signals."
-- **Module 10 (Display List)**
-  _ **10a**: The `TaskList` template uses `@for` to iterate over tasks. `description`: "using Angular control flow for list rendering."
-  _ **10b**: The template displays tasks in a table format. `description`: "creating a structured list display."
-- **Module 11 (Interpolation)**
-  \_ **11a**: The template uses interpolation to display task properties (e.g., `{{ task.title }}`). `description`: "displaying dynamic data with interpolation."
-- **Module 12 (Pipes)**
-  _ **12a**: The `DatePipe` is imported in the `TaskList` component. `description`: "importing Angular pipes for data transformation."
-  _ **12b**: The template uses the `date` pipe to format task creation dates. `description`: "applying pipes to transform displayed data."
+- **Module 6 (Components Introduction)**
+  \_ **6a**: User understands the structure of Angular components and their role in applications. `description`: "learning about component architecture."
+- **Module 7 (Create First Component)**
+  _ **7a**: A `task-list` component exists in a `task-list` directory. `description`: "creating the task list component."
+  _ **7b**: The `task-list` component is imported and used in `app.html`. `description`: "displaying the component in the application."
+- **Module 8 (Task Interface)**
+  _ **8a**: A `src/app/models/task.model.ts` file exists and exports a `Task` interface. `description`: "defining the Task interface for data models."
+  _ **8b**: The `Task` interface includes `id`, `title`, `description`, and `createdAt` properties. `description`: "defining the complete task data structure."
+  \_ **8c**: The `TaskList` component imports the `Task` interface and uses it with signals. `description`: "using TypeScript interfaces with Angular signals."
+- **Module 9 (Display List)**
+  _ **9a**: The `TaskList` template uses `@for` to iterate over tasks. `description`: "using Angular control flow for list rendering."
+  _ **9b**: The template displays tasks in a table format. `description`: "creating a structured list display."
+- **Module 10 (Interpolation)**
+  \_ **10a**: The template uses interpolation to display task properties (e.g., `{{ task.title }}`). `description`: "displaying dynamic data with interpolation."
+- **Module 11 (Pipes)**
+  _ **11a**: The `DatePipe` is imported in the `TaskList` component. `description`: "importing Angular pipes for data transformation."
+  _ **11b**: The template uses the `date` pipe to format task creation dates. `description`: "applying pipes to transform displayed data."
 
 ### Phase 3: Create Task
 
-- **Module 13 (Create Form Component)**
-  _ **13a**: A `task-form` component exists in a `task-form` directory. `description`: "creating the form component for task creation."
-  _ **13b**: The `task-form` component is properly imported and can be used in the application. `description`: "setting up the form component for use."
-- **Module 14 (Routing Introduction)**
-  \_ **14a**: User understands Angular routing concepts and how it enables navigation. `description`: "learning about routing fundamentals."
-- **Module 15 (HTML Form)**
-  _ **15a**: The `task-form.html` contains a properly structured HTML form with input fields for title and description. `description`: "creating the HTML structure for task forms."
-  _ **15b**: The form includes proper styling using UI library classes. `description`: "applying styling to the form elements."
-- **Module 16 (Form Binding)**
-  _ **16a**: The `TaskForm` component imports `FormGroup`, `FormControl`, and `ReactiveFormsModule`. `description`: "importing reactive forms dependencies."
-  _ **16b**: The component defines a `form` property using `FormGroup` with `FormControl` instances for title and description. `description`: "setting up reactive form structure."
-  \_ **16c**: The template uses `[formGroup]` and `formControlName` directives to bind the form. `description`: "binding the form to the template."
-- **Module 17 (Event Binding)**
-  _ **17a**: The form uses `(ngSubmit)` event binding for form submission. `description`: "implementing form submission event handling."
-  _ **17b**: The `TaskForm` component has a `submit()` method that logs form values. `description`: "creating the form submission handler."
-- **Module 18 (Angular Service)**
-  \_ **18a**: User understands Angular services and dependency injection concepts. `description`: "learning about services and DI."
-- **Module 19 (Dependency Injection)**
-  \_ **19a**: User understands how to use the `inject()` function for dependency injection. `description`: "learning modern DI patterns."
-- **Module 20 (Add Task Service)**
-  _ **20a**: A `TaskService` exists and is properly decorated with `@Injectable`. `description`: "creating the task service."
-  _ **20b**: The service manages task data and provides methods for CRUD operations. `description`: "implementing service functionality."
-- **Module 21 (Inject Service Form)**
-  _ **21a**: The `TaskForm` component injects the `TaskService` using the `inject()` function. `description`: "injecting the service into the form component."
-  _ **21b**: The form submission calls the service to add new tasks. `description`: "connecting form submission to service methods."
-- **Module 22 (Programmatical Routing)**
-  \_ **22a**: The application uses Angular Router for navigation after form submission. `description`: "implementing programmatic navigation."
-- **Module 23 (Component Destruction)**
-  \_ **23a**: User understands component lifecycle and cleanup concepts. `description`: "learning about component lifecycle management."
+- **Module 12 (Create Form Component)**
+  _ **12a**: A `task-form` component exists in a `task-form` directory. `description`: "creating the form component for task creation."
+  _ **12b**: The `task-form` component is properly imported and can be used in the application. `description`: "setting up the form component for use."
+- **Module 13 (Routing Introduction)**
+  \_ **13a**: User understands Angular routing concepts and how it enables navigation. `description`: "learning about routing fundamentals."
+- **Module 14 (HTML Form)**
+  _ **14a**: The `task-form.html` contains a properly structured HTML form with input fields for title and description. `description`: "creating the HTML structure for task forms."
+  _ **14b**: The form includes proper styling using UI library classes. `description`: "applying styling to the form elements."
+- **Module 15 (Form Binding)**
+  _ **15a**: The `TaskForm` component imports `FormGroup`, `FormControl`, and `ReactiveFormsModule`. `description`: "importing reactive forms dependencies."
+  _ **15b**: The component defines a `form` property using `FormGroup` with `FormControl` instances for title and description. `description`: "setting up reactive form structure."
+  \_ **15c**: The template uses `[formGroup]` and `formControlName` directives to bind the form. `description`: "binding the form to the template."
+- **Module 16 (Event Binding)**
+  _ **16a**: The form uses `(ngSubmit)` event binding for form submission. `description`: "implementing form submission event handling."
+  _ **16b**: The `TaskForm` component has a `submit()` method that logs form values. `description`: "creating the form submission handler."
+- **Module 17 (Angular Service)**
+  \_ **17a**: User understands Angular services and dependency injection concepts. `description`: "learning about services and DI."
+- **Module 18 (Dependency Injection)**
+  \_ **18a**: User understands how to use the `inject()` function for dependency injection. `description`: "learning modern DI patterns."
+- **Module 19 (Add Task Service)**
+  _ **19a**: A `TaskService` exists and is properly decorated with `@Injectable`. `description`: "creating the task service."
+  _ **19b**: The service manages task data and provides methods for CRUD operations. `description`: "implementing service functionality."
+- **Module 20 (Inject Service Form)**
+  _ **20a**: The `TaskForm` component injects the `TaskService` using the `inject()` function. `description`: "injecting the service into the form component."
+  _ **20b**: The form submission calls the service to add new tasks. `description`: "connecting form submission to service methods."
+- **Module 21 (Programmatical Routing)**
+  \_ **21a**: The application uses Angular Router for navigation after form submission. `description`: "implementing programmatic navigation."
+- **Module 22 (Component Destruction)**
+  \_ **22a**: User understands component lifecycle and cleanup concepts. `description`: "learning about component lifecycle management."
 
 ### Phase 4: Update Task
 
-- **Module 24 (Update Task Route)**
-  \_ **24a**: Routes are defined for updating tasks with dynamic parameters. `description`: "setting up routing for task updates."
-- **Module 25 (Update Task Form)**
-  \_ **25a**: The task form is modified to handle both creating and updating tasks. `description`: "making the form reusable for updates."
-- **Module 26 (Submit Update Form)**
-  \_ **26a**: The form submission logic handles updating existing tasks. `description`: "implementing update functionality."
+- **Module 23 (Update Task Route)**
+  \_ **23a**: Routes are defined for updating tasks with dynamic parameters. `description`: "setting up routing for task updates."
+- **Module 24 (Update Task Form)**
+  \_ **24a**: The task form is modified to handle both creating and updating tasks. `description`: "making the form reusable for updates."
+- **Module 25 (Submit Update Form)**
+  \_ **25a**: The form submission logic handles updating existing tasks. `description`: "implementing update functionality."
 
 ### Phase 5: Delete Task
 
-- **Module 27 (Add Delete Function)**
-  \_ **27a**: The `TaskService` has a `deleteTask` method. `description`: "adding delete functionality to the service."
-- **Module 28 (Add Delete Button)**
-  \_ **28a**: Delete buttons are added to the task list with proper event handling. `description`: "adding interactive delete elements."
-- **Module 29 (Add Empty List)**
-  \_ **29a**: The application displays appropriate messages when no tasks are present. `description`: "handling empty states."
+- **Module 26 (Add Delete Function)**
+  \_ **26a**: The `TaskService` has a `deleteTask` method. `description`: "adding delete functionality to the service."
+- **Module 27 (Add Delete Button)**
+  \_ **27a**: Delete buttons are added to the task list with proper event handling. `description`: "adding interactive delete elements."
+- **Module 28 (Add Empty List)**
+  \_ **28a**: The application displays appropriate messages when no tasks are present. `description`: "handling empty states."
 
 ### Phase 6: Reusable Components
 
-- **Module 30 (Introduction)**
-  \_ **30a**: User understands reusable components and their benefits. `description`: "learning about component reusability."
-- **Module 31 (Create Reusable Component)**
-  \_ **31a**: A reusable `AlertBanner` component is created. `description`: "building a reusable component."
-- **Module 32 (Basic Usage)**
-  \_ **32a**: The `AlertBanner` component is used in multiple places. `description`: "implementing component reuse."
-- **Module 33 (Component Inputs)**
-  \_ **33a**: The `AlertBanner` component has input properties for configuration. `description`: "making components configurable."
-- **Module 34 (Component Outputs)**
-  \_ **34a**: The `AlertBanner` component has output events for user interactions. `description`: "adding component communication."
-- **Module 35 (Delete All Tasks)**
-  \_ **35a**: Bulk delete functionality is implemented. `description`: "adding bulk operations."
-- **Module 36 (Prefill Form)**
-  \_ **36a**: The form prefills with existing task data when updating. `description`: "implementing form pre-population."
+- **Module 29 (Introduction)**
+  \_ **29a**: User understands reusable components and their benefits. `description`: "learning about component reusability."
+- **Module 30 (Create Reusable Component)**
+  \_ **30a**: A reusable `AlertBanner` component is created. `description`: "building a reusable component."
+- **Module 31 (Basic Usage)**
+  \_ **31a**: The `AlertBanner` component is used in multiple places. `description`: "implementing component reuse."
+- **Module 32 (Component Inputs)**
+  \_ **32a**: The `AlertBanner` component has input properties for configuration. `description`: "making components configurable."
+- **Module 33 (Component Outputs)**
+  \_ **33a**: The `AlertBanner` component has output events for user interactions. `description`: "adding component communication."
+- **Module 34 (Delete All Tasks)**
+  \_ **34a**: Bulk delete functionality is implemented. `description`: "adding bulk operations."
+- **Module 35 (Prefill Form)**
+  \_ **35a**: The form prefills with existing task data when updating. `description`: "implementing form pre-population."
 
 ### Phase 7: API Server
 
-- **Module 37 (JSON Server Installation)**
-  \_ **37a**: JSON Server is installed and configured. `description`: "setting up mock API server."
-- **Module 38 (Add HTTP Client)**
-  \_ **38a**: Angular's HttpClient is configured for API communication. `description`: "setting up HTTP client."
-- **Module 39 (Retrieve Tasks)**
-  \_ **39a**: The service fetches tasks from the JSON Server API. `description`: "implementing API data retrieval."
-- **Module 40 (Create Task)**
-  \_ **40a**: API calls are implemented to create new tasks on the server. `description`: "implementing API task creation."
-- **Module 41 (Update Task)**
-  \_ **41a**: API calls are implemented to update existing tasks on the server. `description`: "implementing API task updates."
-- **Module 42 (Delete Task)**
-  \_ **42a**: API calls are implemented to delete tasks from the server. `description`: "implementing API task deletion."
+- **Module 36 (JSON Server Installation)**
+  \_ **36a**: JSON Server is installed and configured. `description`: "setting up mock API server."
+- **Module 37 (Add HTTP Client)**
+  \_ **37a**: Angular's HttpClient is configured for API communication. `description`: "setting up HTTP client."
+- **Module 38 (Retrieve Tasks)**
+  \_ **38a**: The service fetches tasks from the JSON Server API. `description`: "implementing API data retrieval."
+- **Module 39 (Create Task)**
+  \_ **39a**: API calls are implemented to create new tasks on the server. `description`: "implementing API task creation."
+- **Module 40 (Update Task)**
+  \_ **40a**: API calls are implemented to update existing tasks on the server. `description`: "implementing API task updates."
+- **Module 41 (Delete Task)**
+  \_ **41a**: API calls are implemented to delete tasks from the server. `description`: "implementing API task deletion."
 
 ---
 
@@ -566,55 +563,54 @@ You will guide the user through the following phases in strict order. Each modul
 
 ### Phase 2: Task Listing
 
-- **Module 6**: **Add UI Library**: Concept: Adding external UI libraries to Angular. Exercise: Add a UI library (like DaisyUI) to style your application.
-- **Module 7**: **Components Introduction**: Concept: Understanding Angular components as building blocks. Exercise: Learn about the structure of Angular components and their role in applications.
-- **Module 8**: **Create First Component**: Concept: Generating components with Angular CLI. Exercise: Create a `task-list` component and display it in your application.
-- **Module 9**: **Task Interface**: Concept: Defining TypeScript interfaces for data models. Exercise: Create a `Task` interface and use it to define the structure of your task data with signals.
-- **Module 10**: **Display List**: Concept: Rendering dynamic lists with Angular control flow. Exercise: Use `@for` to display a list of tasks in a table format.
-- **Module 11**: **Interpolation**: Concept: Displaying dynamic data in templates. Exercise: Use interpolation to display task properties in the template.
-- **Module 12**: **Pipes**: Concept: Transforming data in templates. Exercise: Use the `DatePipe` to format task creation dates.
+- **Module 6**: **Components Introduction**: Concept: Understanding Angular components as building blocks. Exercise: Learn about the structure of Angular components and their role in applications.
+- **Module 7**: **Create First Component**: Concept: Generating components with Angular CLI. Exercise: Create a `task-list` component and display it in your application.
+- **Module 8**: **Task Interface**: Concept: Defining TypeScript interfaces for data models. Exercise: Create a `Task` interface and use it to define the structure of your task data with signals.
+- **Module 9**: **Display List**: Concept: Rendering dynamic lists with Angular control flow. Exercise: Use `@for` to display a list of tasks in a table format.
+- **Module 10**: **Interpolation**: Concept: Displaying dynamic data in templates. Exercise: Use interpolation to display task properties in the template.
+- **Module 11**: **Pipes**: Concept: Transforming data in templates. Exercise: Use the `DatePipe` to format task creation dates.
 
 ### Phase 3: Create Task
 
-- **Module 13**: **Create Form Component**: Concept: Generating form components. Exercise: Create a `task-form` component for adding new tasks.
-- **Module 14**: **Routing Introduction**: Concept: Understanding Angular routing concepts. Exercise: Learn about routing and how it enables navigation between different views.
-- **Module 15**: **HTML Form**: Concept: Creating HTML forms. Exercise: Build the HTML structure for a task creation form with proper styling.
-- **Module 16**: **Form Binding**: Concept: Binding forms to component data using reactive forms. Exercise: Use `FormGroup` and `FormControl` to bind form inputs to component properties.
-- **Module 17**: **Event Binding**: Concept: Handling user interactions and form submissions. Exercise: Implement form submission handling using `(ngSubmit)` and event binding.
-- **Module 18**: **Angular Service**: Concept: Understanding Angular services and dependency injection. Exercise: Learn about services and how they centralize application logic.
-- **Module 19**: **Dependency Injection**: Concept: Injecting services into components. Exercise: Use the `inject()` function to inject services into components.
-- **Module 20**: **Add Task Service**: Concept: Creating a service to manage task data. Exercise: Create a `TaskService` to handle task operations and state management.
-- **Module 21**: **Inject Service Form**: Concept: Using services in form components. Exercise: Inject the `TaskService` into the form component to add new tasks.
-- **Module 22**: **Programmatical Routing**: Concept: Navigating programmatically in Angular. Exercise: Use Angular Router to navigate after successful task creation.
-- **Module 23**: **Component Destruction**: Concept: Understanding component lifecycle and cleanup. Exercise: Learn about component destruction and memory management.
+- **Module 12**: **Create Form Component**: Concept: Generating form components. Exercise: Create a `task-form` component for adding new tasks.
+- **Module 13**: **Routing Introduction**: Concept: Understanding Angular routing concepts. Exercise: Learn about routing and how it enables navigation between different views.
+- **Module 14**: **HTML Form**: Concept: Creating HTML forms. Exercise: Build the HTML structure for a task creation form with proper styling.
+- **Module 15**: **Form Binding**: Concept: Binding forms to component data using reactive forms. Exercise: Use `FormGroup` and `FormControl` to bind form inputs to component properties.
+- **Module 16**: **Event Binding**: Concept: Handling user interactions and form submissions. Exercise: Implement form submission handling using `(ngSubmit)` and event binding.
+- **Module 17**: **Angular Service**: Concept: Understanding Angular services and dependency injection. Exercise: Learn about services and how they centralize application logic.
+- **Module 18**: **Dependency Injection**: Concept: Injecting services into components. Exercise: Use the `inject()` function to inject services into components.
+- **Module 19**: **Add Task Service**: Concept: Creating a service to manage task data. Exercise: Create a `TaskService` to handle task operations and state management.
+- **Module 20**: **Inject Service Form**: Concept: Using services in form components. Exercise: Inject the `TaskService` into the form component to add new tasks.
+- **Module 21**: **Programmatical Routing**: Concept: Navigating programmatically in Angular. Exercise: Use Angular Router to navigate after successful task creation.
+- **Module 22**: **Component Destruction**: Concept: Understanding component lifecycle and cleanup. Exercise: Learn about component destruction and memory management.
 
 ### Phase 4: Update Task
 
-- **Module 24**: **Update Task Route**: Concept: Creating routes for updating tasks. Exercise: Set up routing to navigate to task update forms.
-- **Module 25**: **Update Task Form**: Concept: Reusing components for different purposes. Exercise: Modify the task form to handle both creating and updating tasks.
-- **Module 26**: **Submit Update Form**: Concept: Handling form updates and data persistence. Exercise: Implement the logic to update existing tasks through the form.
+- **Module 23**: **Update Task Route**: Concept: Creating routes for updating tasks. Exercise: Set up routing to navigate to task update forms.
+- **Module 24**: **Update Task Form**: Concept: Reusing components for different purposes. Exercise: Modify the task form to handle both creating and updating tasks.
+- **Module 25**: **Submit Update Form**: Concept: Handling form updates and data persistence. Exercise: Implement the logic to update existing tasks through the form.
 
 ### Phase 5: Delete Task
 
-- **Module 27**: **Add Delete Function**: Concept: Implementing delete functionality in services. Exercise: Add a delete method to the `TaskService` to remove tasks.
-- **Module 28**: **Add Delete Button**: Concept: Adding interactive elements to lists. Exercise: Add delete buttons to the task list with proper event handling.
-- **Module 29**: **Add Empty List**: Concept: Handling empty states in applications. Exercise: Display appropriate messages when no tasks are present.
+- **Module 26**: **Add Delete Function**: Concept: Implementing delete functionality in services. Exercise: Add a delete method to the `TaskService` to remove tasks.
+- **Module 27**: **Add Delete Button**: Concept: Adding interactive elements to lists. Exercise: Add delete buttons to the task list with proper event handling.
+- **Module 28**: **Add Empty List**: Concept: Handling empty states in applications. Exercise: Display appropriate messages when no tasks are present.
 
 ### Phase 6: Reusable Components
 
-- **Module 30**: **Introduction**: Concept: Understanding reusable components and their benefits. Exercise: Learn about component reusability and when to create reusable components.
-- **Module 31**: **Create Reusable Component**: Concept: Building components for multiple use cases. Exercise: Create a reusable `AlertBanner` component.
-- **Module 32**: **Basic Usage**: Concept: Using reusable components in different contexts. Exercise: Implement the `AlertBanner` component in multiple places.
-- **Module 33**: **Component Inputs**: Concept: Making components configurable with inputs. Exercise: Add input properties to make the `AlertBanner` component flexible.
-- **Module 34**: **Component Outputs**: Concept: Communicating from child to parent components. Exercise: Add output events to the `AlertBanner` component for user interactions.
-- **Module 35**: **Delete All Tasks**: Concept: Implementing bulk operations. Exercise: Add functionality to delete all tasks at once.
-- **Module 36**: **Prefill Form**: Concept: Pre-populating forms with existing data. Exercise: Modify the form to prefill with task data when updating.
+- **Module 29**: **Introduction**: Concept: Understanding reusable components and their benefits. Exercise: Learn about component reusability and when to create reusable components.
+- **Module 30**: **Create Reusable Component**: Concept: Building components for multiple use cases. Exercise: Create a reusable `AlertBanner` component.
+- **Module 31**: **Basic Usage**: Concept: Using reusable components in different contexts. Exercise: Implement the `AlertBanner` component in multiple places.
+- **Module 32**: **Component Inputs**: Concept: Making components configurable with inputs. Exercise: Add input properties to make the `AlertBanner` component flexible.
+- **Module 33**: **Component Outputs**: Concept: Communicating from child to parent components. Exercise: Add output events to the `AlertBanner` component for user interactions.
+- **Module 34**: **Delete All Tasks**: Concept: Implementing bulk operations. Exercise: Add functionality to delete all tasks at once.
+- **Module 35**: **Prefill Form**: Concept: Pre-populating forms with existing data. Exercise: Modify the form to prefill with task data when updating.
 
 ### Phase 7: API Server
 
-- **Module 37**: **JSON Server Installation**: Concept: Setting up a mock API server for development. Exercise: Install and configure JSON Server to simulate a backend API.
-- **Module 38**: **Add HTTP Client**: Concept: Making HTTP requests in Angular. Exercise: Configure Angular's HttpClient to communicate with the API.
-- **Module 39**: **Retrieve Tasks**: Concept: Fetching data from an API. Exercise: Modify the service to fetch tasks from the JSON Server API.
-- **Module 40**: **Create Task**: Concept: Sending data to an API. Exercise: Implement API calls to create new tasks on the server.
-- **Module 41**: **Update Task**: Concept: Updating data via API calls. Exercise: Implement API calls to update existing tasks on the server.
-- **Module 42**: **Delete Task**: Concept: Removing data via API calls. Exercise: Implement API calls to delete tasks from the server.
+- **Module 36**: **JSON Server Installation**: Concept: Setting up a mock API server for development. Exercise: Install and configure JSON Server to simulate a backend API.
+- **Module 37**: **Add HTTP Client**: Concept: Making HTTP requests in Angular. Exercise: Configure Angular's HttpClient to communicate with the API.
+- **Module 38**: **Retrieve Tasks**: Concept: Fetching data from an API. Exercise: Modify the service to fetch tasks from the JSON Server API.
+- **Module 39**: **Create Task**: Concept: Sending data to an API. Exercise: Implement API calls to create new tasks on the server.
+- **Module 40**: **Update Task**: Concept: Updating data via API calls. Exercise: Implement API calls to update existing tasks on the server.
+- **Module 41**: **Delete Task**: Concept: Removing data via API calls. Exercise: Implement API calls to delete tasks from the server.
