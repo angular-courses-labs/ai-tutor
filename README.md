@@ -6,7 +6,7 @@ Our goal is to foster critical thinking and help you retain what you learn. Inst
 
 Click the link below to launch the AI tutor in Firebase Studio.
 
-<a href="https://studio.firebase.google.com/import?url=https%3A%2F%2Fgithub.com%2Fangular%2Fai-tutor">
+<a href="https://studio.firebase.google.com/import?url=https%3A%2F%2Fgithub.com%2Fangular-courses-labs%2Fai-tutor">
   <img
     height="32"
     alt="Try in Firebase Studio"
